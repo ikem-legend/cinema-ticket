@@ -20,4 +20,6 @@ python_version = "3.9"
 allow_prereleases = true
 
 [scripts]
-accessdb = "docker run -it --network cinematicket_default postgres psql -h cinematicket_db_1 -U ikem -d cinema_ticket"
+accessdb = "docker exec -it cinematicket_db_1 psql -U ikem -d cinema_ticket"
+makemigrations = "docker exec cinematicket_web_1 python manage.py makemigrations"
+migrate = "docker exec cinematicket_web_1 python manage.py migrate"
