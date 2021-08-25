@@ -12,7 +12,9 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
             "email",
             "phone",
             "user_id",
-            "dob",
+            "date_of_birth",
             "date_created",
-            "status",
+            "is_staff",
+            "is_active",
+            "is_verified",
         )
