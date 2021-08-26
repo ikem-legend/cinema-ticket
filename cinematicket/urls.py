@@ -17,14 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 from rest_framework import routers
-from users.views import UserViewSet
+from cinematicket.apps.users.views import UserViewSet
 
 router = routers.SimpleRouter()
 router.register(r"users", UserViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/v1/", include("users.urls")),
+    path("api/v1/", include("cinematicket.apps.users.urls")),
     path("api/v1/", include(router.urls)),
     path("", lambda request: HttpResponse("Welcome to Cinema booking")),
 ]

@@ -41,9 +41,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "tickets.apps.TicketsConfig",
-    "users.apps.UsersConfig",
-    "auth.apps.AuthConfig",
+    "cinematicket.apps.tickets.apps.TicketsConfig",
+    "cinematicket.apps.users.apps.UsersConfig",
+    "cinematicket.apps.auth.apps.AuthConfig",
     "rest_framework",
     "django_filters",
 ]
@@ -101,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
-    {"NAME": "users.validators.PasswordFormatValidator"},
+    {"NAME": "cinematicket.apps.users.validators.PasswordFormatValidator"},
 ]
 
 
@@ -138,13 +138,12 @@ STATIC_URL = "/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "cinematicket_apps_users.User"
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     "DEFAULT_PERMISSION_CLASSES": [
-        # "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
         "rest_framework.permissions.IsAuthenticated",
         "rest_framework.permissions.AllowAny",
     ],
