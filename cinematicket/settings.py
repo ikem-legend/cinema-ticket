@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "tickets.apps.TicketsConfig",
     "users.apps.UsersConfig",
+    "auth.apps.AuthConfig",
     "rest_framework",
     "django_filters",
 ]
